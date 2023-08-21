@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
   return (
     <header>
@@ -9,16 +11,16 @@ export default function Header() {
           />
           <ul className="list-unstyled m-0 d-flex gap-3 ms-auto">
             <li className="nav-item">
-              <a href="/" className="nav-link">Home</a>
+              <Link to="/" className="nav-link">Home</Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Products</a>
+              <Link to="/products" className="nav-link">Products</Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Login</a>
+              <Link to="/login" className="nav-link">Login</Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Cart</a>
+              <Link to="/cart" className="nav-link">Cart</Link>
             </li>
           </ul>
         </div>
