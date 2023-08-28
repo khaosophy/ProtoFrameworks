@@ -1,0 +1,15 @@
+
+/* Overwrite Styles from PRL CSS */
+a:has(picture):hover,
+a:has(img):hover {
+  opacity: 1;
+}
+
+a.home-cta__button {
+  opacity: 1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
