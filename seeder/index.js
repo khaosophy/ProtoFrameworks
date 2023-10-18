@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 
 (async () => {
   // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
   // Navigate the page to a URL
@@ -12,15 +12,15 @@ import puppeteer from 'puppeteer';
     const categoryArray = Array.from(document.querySelectorAll('.category'))
     
     const categories = categoryArray.map(category => {
-      const categoryName = category.querySelector('.itemLabel span').innerText;
-      const categoryId = category.href.split('/').pop();
-      return { categoryName, categoryId };
+      const name = category.querySelector('.itemLabel span').innerText;
+      const blc_id = parseInt(category.href.split('/').pop());
+      return { name, blc_id };
     });
 
     return categories;
   });
 
-  console.log(data);
+  console.log(JSON.stringify(data));
 
   await browser.close();
 })();
